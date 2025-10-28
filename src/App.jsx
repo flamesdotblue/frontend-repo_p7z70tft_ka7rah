@@ -1,28 +1,31 @@
-import { useState } from 'react'
+import Hero from './components/Hero';
+import Manifesto from './components/Manifesto';
+import Founders from './components/Founders';
+import Services from './components/Services';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
+    <div className="min-h-screen bg-[#0A0A0A] text-white">
+      <Hero />
+      <Manifesto />
+      <Founders />
+      <Services />
+      <footer className="border-t border-white/10 bg-[#0A0A0A] py-10 text-sm text-gray-400">
+        <div className="mx-auto max-w-6xl px-6">
+          <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
+            <p>© {new Date().getFullYear()} G‑Squad • All rights reserved</p>
+            <div className="flex flex-wrap items-center gap-4">
+              <a href="mailto:info@g.squad" className="hover:text-white">info@g.squad</a>
+              <span className="text-gray-600">|</span>
+              <a href="https://x.com/theg_squad" target="_blank" rel="noreferrer" className="hover:text-white">X</a>
+              <a href="https://instagram.com/the._g_.squad" target="_blank" rel="noreferrer" className="hover:text-white">Instagram</a>
+              <a href="https://t.me/the_gsquad" target="_blank" rel="noreferrer" className="hover:text-white">Telegram</a>
+            </div>
+          </div>
         </div>
-      </div>
+      </footer>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
